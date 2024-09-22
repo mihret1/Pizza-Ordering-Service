@@ -20,7 +20,7 @@ const Navbar=()=>{
             <Link to='/' style={{ textDecoration:'none' }}>
               <Stack direction='row' alignItems='center' spacing={2}>
                  <Box > <img src={logo2} style={{ height:isMediumSize?53 :78,   }}/> </Box>
-                 <Typography  sx={{ color:'brown' , fontWeight:'bolder', fontSize: isMediumSize?25: 30}}>Pizza</Typography>
+                 <Typography  sx={{ color:'brown' , fontWeight:'bolder', fontSize: isMediumSize?22: 30}}>Pizza</Typography>
               </Stack>
             </Link>
             <Stack direction='row'   spacing={{xs:2, sm:3, md:5,lg:10 }} alignItems='center'>
