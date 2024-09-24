@@ -1,10 +1,11 @@
-import { Box, Button, ButtonBase, IconButton, Stack, Typography } from '@mui/material'
+import { Box, Button, ButtonBase, Grid, Grid2, IconButton, Stack, Typography } from '@mui/material'
 import React from 'react'
 import Navbar from '../components/navbar'
 import img1 from '../assets/img1.jpg'
 import img2 from '../assets/img2.jpg'
 import img3 from '../assets/img3.jpg'
 import img4 from '../assets/img4.jpg'
+import img6 from '../assets/img6.jpg'
 import SearchIcon from '@mui/icons-material/Search';
 import {useTheme, useMediaQuery} from '@mui/material'
 import {useState, useEffect} from 'react'
@@ -123,7 +124,27 @@ function Home() {
   }
 
 const CardThree=(props)=>{
-  return(<></>)
+  return(
+      <Stack width={ 300} paddingX={4} height={580} borderRadius={5} boxShadow={5} alignItems='center' justifyContent='center'>
+            <Stack sx={{ justifyContent:'center',alignItems:'center', backgroundColor:'brown',width:290, height:290,borderRadius:'100%' }}>
+              <img src={props.imagee} style={{ width:250, height:250, borderRadius:'100%' }}/>
+            </Stack>
+            <Stack>
+              <Typography fontWeight='bolder' fontFamily='sans-serif' fontSize={24}>{props.title}</Typography>
+              <Typography color='#404241' fontSize={16}  fontFamily='sans-serif'>{props.desc}</Typography>
+              <Stack direction='row' borderBottom={0.1} justifyContent='space-between' alignItems='center' pb={1.5} >
+                <Stack direction='row' fontFamily='sans-serif'><span style={{color:'green', fontSize:40,fontWeight:'bold' }}>{props.money}</span><span>Birr</span></Stack>
+                <Stack width={170} height={60} borderRadius={3} justifyContent='center' fontFamily='sans-serif' fontWeight='bold' alignItems='center' fontSize={30}  sx={{ backgroundColor:'#FF8100' }}>
+                  <Link to='/' style={{ color:'white' ,textDecoration:'none'}}> Order  </Link>
+                </Stack>
+              </Stack>
+              <Stack direction='row' pt={2} justifyContent='space-between' alignItems='center'>
+                <img src={props.imageP} style={{ width:57,height:57,borderRadius:'100%'}}/>
+                <Typography fontSize={20} fontFamily='sans-serif' fontWeight='bold' sx={{  color:'#4b4e4d' }}>{props.titleTwo}</Typography>
+              </Stack>
+
+            </Stack>
+      </Stack>)
 }
 
 
@@ -277,7 +298,76 @@ const CardThree=(props)=>{
       </Stack>
 
      {/* part four */}
-     part four
+     <Stack sx={{  paddingX: isMediumSize && 0.3 || 4,paddingTop:10 }}>
+       <Typography pl={2.5} sx={{ color:'gray' , 
+          fontSize: isMediumSize ? 24: 40
+           }}>Popular Pizzas</Typography>
+       <Grid container justifyContent='space-around' alignItems='center' columnSpacing={2} rowSpacing={3}> 
+        
+         <Grid item >
+            <CardThree 
+              imageP={girl}
+              imagee={img6}
+              money='300'
+              title='Margarita'
+              desc='Tomato , Marizella,Bell peper, Onions, Oilive oil'
+              titleTwo='Azmera Pizza'
+                />
+         </Grid>
+         <Grid item >
+            <CardThree 
+              imageP={girl}
+              imagee={img6}
+              money='300'
+              title='Margarita'
+              desc='Tomato , Marizella,Bell peper, Onions, Oilive oil'
+              titleTwo='Azmera Pizza'
+                />
+         </Grid>
+         <Grid item >
+            <CardThree 
+              imageP={girl}
+              imagee={img6}
+              money='300'
+              title='Margarita'
+              desc='Tomato , Marizella,Bell peper, Onions, Oilive oil'
+              titleTwo='Azmera Pizza'
+                />
+         </Grid>
+         <Grid item >
+            <CardThree 
+              imageP={girl}
+              imagee={img6}
+              money='300'
+              title='Margarita'
+              desc='Tomato , Marizella,Bell peper, Onions, Oilive oil'
+              titleTwo='Azmera Pizza'
+                />
+         </Grid>
+         <Grid item >
+            <CardThree 
+              imageP={girl}
+              imagee={img6}
+              money='300'
+              title='Margarita'
+              desc='Tomato , Marizella,Bell peper, Onions, Oilive oil'
+              titleTwo='Azmera Pizza'
+                />
+         </Grid>
+         <Grid item >
+            <CardThree 
+              imageP={girl}
+              imagee={img6}
+              money='300'
+              title='Margarita'
+              desc='Tomato , Marizella,Bell peper, Onions, Oilive oil'
+              titleTwo='Azmera Pizza'
+                />
+         </Grid>
+
+            
+       </Grid>
+      </Stack>
     </Stack>
   )
 }
