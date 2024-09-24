@@ -38,6 +38,7 @@ function Home() {
     },[count])
 
  const StackM=motion(Stack)
+
   const CardOne=(props)=>{
     return(
       <AnimatePresence >
@@ -98,28 +99,34 @@ function Home() {
     )
   }
 
-  const CardTwo=(props)=>{
+  const  CardTwo=(props)=>{
     return(
-      <Stack direction='row' p={2.5}  spacing={1} sx={{ width:470, height:100,borderRadius:4 ,backgroundColor:'white', boxShadow:1}}>
+      <Stack direction='row' p={2.5}  spacing={1} sx={{ width: isSmallSize ? 300: 470, height:isSmallSize? 120: 100,borderRadius:4 ,backgroundColor:'white'}}>
         <Stack direction='column'>
           <Stack direction='row' alignItems= "center" spacing={1} >
-            <img src={props.imagee} style={{width:45,height:45,borderRadius:'100%'}}/>
+            <img src={props.imagee} style={{width:isSmallSize ? 33: 45,height: isSmallSize? 33: 45,borderRadius:'100%'}}/>
             <Typography fontWeight='bolder'>{props.title}</Typography>
           </Stack>
-          <Typography sx={{ fontSize:14,color:'gray', }}>{props.desc}</Typography>
+          <Typography sx={{ fontSize:isSmallSize ?12: 14 ,color:'gray', }}>{props.desc}</Typography>
         </Stack>
         <Stack direction='row' spacing={1}  pl={1.3} alignItems= "center" sx={{ backgroundColor:'#F2F9F2',borderRadius:3,width:530 }}>
-           <Stack  alignItems= "center" justifyContent='center' sx={{backgroundColor:'#F5E1C2', height:63, width:63 , borderRadius:'100%', }}>
-              <BatteryChargingFullIcon sx={{  fontSize:40 , color:'#FF8100' }} />
+           <Stack  alignItems= "center" justifyContent='center' sx={{backgroundColor:'#F5E1C2', height:isSmallSize ? 47: 63, width:isSmallSize ? 47: 63,  borderRadius:'100%', }}>
+              <BatteryChargingFullIcon sx={{  fontSize: isSmallSize ?25: 40 , color:'#FF8100' }} />
            </Stack>
            <Box>
-            <Typography color='#868F86'>Number of order</Typography>
-            <Typography  sx={{ fontSize:36, fontWeight:'bold',color:'#FF8100' }}>{props.order}</Typography>
+            <Typography color='#868F86' sx={{ fontSize :isSmallSize && 15 }}>Number of order</Typography>
+            <Typography  sx={{ fontSize:isSmallSize ? 25: 36, fontWeight:'bold',color:'#FF8100' }}>{props.order}</Typography>
            </Box>
         </Stack>
       </Stack>
     )
   }
+
+const CardThree=(props)=>{
+  return(<></>)
+}
+
+
 
   return (
     <Stack >
@@ -206,9 +213,12 @@ function Home() {
              </Stack>
         </Stack>
       </Stack>
+
       {/* part three */}
-      <Stack pl={7} pt={20} pb={20} sx={{ background: 'linear-gradient(to bottom, #FFFBF8, #FEE9D3, #FFFBF8)'}}>
-        <Typography sx={{ color:'gray' , fontSize:37 }}>Top Restaurant</Typography>
+      <Stack  pt={20} pb={20} sx={{ background: 'linear-gradient(to bottom, #FFFBF8, #FEE9D3, #FFFBF8)', paddingLeft: isMediumSize && 2 || 7}}>
+        <Typography sx={{ color:'gray' , 
+          fontSize: isMediumSize ? 24: 37
+           }}>Top Restaurant</Typography>
         <Stack direction='row' spacing={2.7} 
                 sx={{ 
                overflow: "auto",
@@ -266,15 +276,8 @@ function Home() {
         </Stack>
       </Stack>
 
-      <Stack direction='row' pt={18} spacing={2} sx={{ overflowX:'auto' }}>
-          <img src={img3}/>
-          <img src={img3}/>
-          <img src={img3}/>
-          <img src={img3}/>
-          <img src={img3}/>
-          <img src={img3}/>
-
-      </Stack>
+     {/* part four */}
+     part four
     </Stack>
   )
 }
