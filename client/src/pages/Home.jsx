@@ -298,8 +298,8 @@ const CardThree=(props)=>{
       </Stack>
 
      {/* part four */}
-     <Stack sx={{  paddingX: isMediumSize && 0.3 || 4,paddingTop:10 }}>
-       <Typography pl={2.5} sx={{ color:'gray' , 
+     <Stack sx={{  paddingX: isMediumSize && 0.3 || 5,paddingTop:10 }}>
+       <Typography paddingY={2} pl={2.5} sx={{ color:'gray' , 
           fontSize: isMediumSize ? 24: 40
            }}>Popular Pizzas</Typography>
        <Grid container justifyContent='space-around' alignItems='center' columnSpacing={2} rowSpacing={3}> 
@@ -365,6 +365,48 @@ const CardThree=(props)=>{
                 />
          </Grid>
 
+            
+       </Grid>
+      </Stack>
+
+      {/* part five */}
+      <Stack sx={{  paddingX: isMediumSize && 0.3 || 5,paddingTop:10 }}>
+       <Typography paddingY={3} pl={2.5} sx={{ color:'gray' , 
+          fontSize: isMediumSize ? 24: 40
+           }}>Fasting</Typography>
+       <Grid container justifyContent='space-around' alignItems='center' columnSpacing={2} rowSpacing={3}> 
+        
+         <Grid item >
+            <CardThree 
+              imageP={girl}
+              imagee={img6}
+              money='300'
+              title='Margarita'
+              desc='Tomato , Marizella,Bell peper, Onions, Oilive oil'
+              titleTwo='Azmera Pizza'
+                />
+         </Grid>
+         <Grid item >
+            <CardThree 
+              imageP={girl}
+              imagee={img6}
+              money='300'
+              title='Margarita'
+              desc='Tomato , Marizella,Bell peper, Onions, Oilive oil'
+              titleTwo='Azmera Pizza'
+                />
+         </Grid>
+         <Grid item >
+            <CardThree 
+              imageP={girl}
+              imagee={img6}
+              money='300'
+              title='Margarita'
+              desc='Tomato , Marizella,Bell peper, Onions, Oilive oil'
+              titleTwo='Azmera Pizza'
+                />
+         </Grid>
+         
             
        </Grid>
       </Stack>
