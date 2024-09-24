@@ -16,7 +16,7 @@ const Navbar=()=>{
     const [navv, setNavv]=useState()
     return(
         <Stack direction='column'  width='100%' bgcolor='#FFFBF8' className='navu' > 
-        <Stack direction='row'  alignItems='center' justifyContent='space-between' sx={{  paddingX:2 }} >
+          <Stack direction='row'  alignItems='center' justifyContent='space-between' sx={{  paddingX:2 }} >
             <Link to='/' style={{ textDecoration:'none' }}>
               <Stack direction='row' alignItems='center' spacing={2}>
                  <Box > <img src={logo2} style={{ height:isMediumSize?53 :78,   }}/> </Box>
