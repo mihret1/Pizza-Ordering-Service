@@ -16,6 +16,8 @@ import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
 import { SvgIcon } from '@mui/material';
 
 import girl from '../assets/girl.jpg'
+import Footer from '../components/footer'
+
 function Home() {
   const theme=useTheme()
 
@@ -125,14 +127,14 @@ function Home() {
 
 const CardThree=(props)=>{
   return(
-      <Stack width={ 300} paddingX={4} height={580} borderRadius={5} boxShadow={5} alignItems='center' justifyContent='center'>
-            <Stack sx={{ justifyContent:'center',alignItems:'center', backgroundColor:'brown',width:290, height:290,borderRadius:'100%' }}>
+      <Stack bgcolor='white' width={ 300} paddingX={4} height={580} borderRadius={5} boxShadow={1} alignItems='center' justifyContent='center'>
+            <Stack sx={{ justifyContent:'center',alignItems:'center', backgroundColor:'#FBE6CC',width:290, height:290,borderRadius:'100%' }}>
               <img src={props.imagee} style={{ width:250, height:250, borderRadius:'100%' }}/>
             </Stack>
             <Stack>
               <Typography fontWeight='bolder' fontFamily='sans-serif' fontSize={24}>{props.title}</Typography>
               <Typography color='#404241' fontSize={16}  fontFamily='sans-serif'>{props.desc}</Typography>
-              <Stack direction='row' borderBottom={0.1} justifyContent='space-between' alignItems='center' pb={1.5} >
+              <Stack direction='row' borderBottom={1.5} borderColor='#ced6d2' justifyContent='space-between' alignItems='center' pb={1.5} >
                 <Stack direction='row' fontFamily='sans-serif'><span style={{color:'green', fontSize:40,fontWeight:'bold' }}>{props.money}</span><span>Birr</span></Stack>
                 <Stack width={170} height={60} borderRadius={3} justifyContent='center' fontFamily='sans-serif' fontWeight='bold' alignItems='center' fontSize={30}  sx={{ backgroundColor:'#FF8100' }}>
                   <Link to='/' style={{ color:'white' ,textDecoration:'none'}}> Order  </Link>
@@ -298,7 +300,7 @@ const CardThree=(props)=>{
       </Stack>
 
      {/* part four */}
-     <Stack sx={{  paddingX: isMediumSize && 0.3 || 5,paddingTop:10 }}>
+     <Stack pb={5} sx={{  paddingX: isMediumSize && 0.3 || 5,paddingTop:10 ,backgroundColor:'#FFF8F1'}}>
        <Typography paddingY={2} pl={2.5} sx={{ color:'gray' , 
           fontSize: isMediumSize ? 24: 40
            }}>Popular Pizzas</Typography>
@@ -370,7 +372,7 @@ const CardThree=(props)=>{
       </Stack>
 
       {/* part five */}
-      <Stack sx={{  paddingX: isMediumSize && 0.3 || 5,paddingTop:10 }}>
+      <Stack  pb={15} sx={{  paddingX: isMediumSize && 0.3 || 5,paddingTop:10,backgroundColor:'#FFF8F1' }}>
        <Typography paddingY={3} pl={2.5} sx={{ color:'gray' , 
           fontSize: isMediumSize ? 24: 40
            }}>Fasting</Typography>
@@ -380,7 +382,7 @@ const CardThree=(props)=>{
             <CardThree 
               imageP={girl}
               imagee={img6}
-              money='300'
+              money='150'
               title='Margarita'
               desc='Tomato , Marizella,Bell peper, Onions, Oilive oil'
               titleTwo='Azmera Pizza'
@@ -410,6 +412,14 @@ const CardThree=(props)=>{
             
        </Grid>
       </Stack>
+   
+   
+      <Stack>
+        <Footer />
+      </Stack>
+   
+   
+   
     </Stack>
   )
 }
